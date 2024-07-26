@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile-Card</title>
+    <style>
+        body {
+            display: flex;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .info {
+            padding: 25px;
+            height: auto;
+            width: 40%;
+            border: 1px solid black;
+            box-shadow: 0px 0px 5px 0px;
+        }
+
+        .card {
+            width: 40%;
+            height: 350px;
+            border: 1px solid black;
+            margin-left: 5px;
+            display: flex;
+            align-items: center;
+            background-color: rgb(139, 135, 135);
+        }
+
+        .image {
+            width: 30%;
+            height: 50%;
+            border: 1px solid black;
+            border-radius: 50%;
+            margin: 20px;
+        }
+
+        .details {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="info">
+        <h3>Image : </h3>
+        <input type="text" id="inputImageLink">
+        <h3>Name : </h3>
+        <input type="text" id="inputName">
+        <h3>Email : </h3>
+        <input type="email" id="inputEmail">
+        <h3>Course : </h3>
+        <input type="text" id="inputCourse">
+        <h3>Mobile : </h3>
+        <input type="text" id="inputMobile">
+    </div>
+    <div class="card">
+        <div class="image" id="image">
+            <img src="" alt="">
+        </div>
+        <div class="details">
+            <ul id="ul">
+                <li id="Name">Name : </li>
+                <li id="Email">Email : </li>
+                <li id="Course">Course : </li>
+                <li id="Mobile">Mobile Number : </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        document.getElementById("inputImageLink").oninput = function () {
+            let image = document.getElementById("inputImageLink").value;
+            console.log(image);
+            document.getElementById("image").style.backgroundImage = "url(" + image + ")";
+        }
+
+        document.getElementById("inputName").oninput = function () {
+            let name = document.getElementById("inputName").value
+            document.getElementById("Name").innerText = "Name : " + name
+        }
+        document.getElementById("inputEmail").oninput = function () {
+            let email = document.getElementById("inputEmail").value
+            document.getElementById("Email").innerText = "Email : " + email
+        }
+        document.getElementById("inputCourse").oninput = function () {
+            let course = document.getElementById("inputCourse").value
+            document.getElementById("Course").innerText = "Course : " + course
+        }
+        document.getElementById("inputMobile").oninput = function () {
+            let mobile = document.getElementById("inputMobile").value
+            document.getElementById("Mobile").innerText = "Mobile Number : " + mobile
+        }
+    </script>
+</body>
+
+</html>

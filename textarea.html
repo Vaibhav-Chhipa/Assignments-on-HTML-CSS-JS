@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            margin-top: 25px;
+            width: 700px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <textarea name="" id="" rows="10" cols="40"></textarea>
+    <h1>CSS Properties</h1>
+    <input type="text" name="" id="color" placeholder="color">
+    <input type="text" id="bgcolor" placeholder="background color">
+    <input type="text" id="Fsize" placeholder="Font size">
+    <div class="box" id="box"></div>
+    <h3>Total Letters : <span id="tl"></span></h3>
+</body>
+<script>
+    let len
+    document.querySelector("textarea").oninput = function(){
+        let val = document.querySelector("textarea").value
+        document.getElementById("box").innerText=val
+        document.getElementById("tl").innerText=val.length
+    }
+    document.getElementById("color").oninput=function(){
+        let col = document.getElementById("color").value
+        document.getElementById("box").style.color = col
+    }
+    document.getElementById("bgcolor").oninput=function(){
+        let bgcol = document.getElementById("bgcolor").value
+        document.getElementById("box").style.backgroundColor = bgcol
+    }
+    document.getElementById("Fsize").oninput = function(){
+        let size = document.getElementById('Fsize').value;
+        document.getElementById("box").style.fontSize=size+"px"
+    }
+    
+
+
+    
+</script>
+</html>

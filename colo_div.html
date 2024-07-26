@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* height: 100vh; */
+        }
+
+        .box {
+            width: 70%;
+            height: 60%;
+            border: 1px solid black;
+            /* display: flex; */
+            /* justify-content: center; */
+        }
+
+        input {
+            font-size: 20px;
+            margin-top: 50px;
+        }
+        .in{
+            /* display: flex; */
+            justify-content: center;
+            margin: 50px;
+        }
+        .inner{
+            display: flex;
+            justify-content: center;
+            margin: 50px;
+        }
+        .col {
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            margin: 20px;
+        }
+        button{
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="text" placeholder="Enter color name" id="color" style="margin-left: 230px;">
+        <!-- <button>Submit</button> -->
+        <input type="text" placeholder="Enter box number" id="box">
+        <button>Submit</button>
+        <div class="in">
+        <div class="inner">
+            <div class="col" id="1"></div>
+            <div class="col" id="2"></div>
+            <div class="col" id="3"></div>
+            <div class="col" id="4"></div>
+        </div>
+        <div class="inner">
+            <div class="col" id="5"></div>
+            <div class="col" id="6"></div>
+            <div class="col" id="7"></div>
+            <div class="col" id="8"></div>
+        </div>
+    </div>
+    </div>
+    <script>
+        document.querySelector("button").onclick = function(){
+            let val = document.querySelector("#color").value;
+            let t = document.querySelector("#box").value;
+            console.log(val)
+            console.log(t)
+            let v = t;
+            document.getElementById(t).style.backgroundColor=val
+        }
+    </script>
+</body>
+
+</html>

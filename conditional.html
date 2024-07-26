@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment5</title>
+    <style>
+        #red {
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            background-color: red;
+            display: inline-block;
+        }
+        #blue {
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            background-color: blue;
+            display: inline-block;
+        }
+
+        #green {
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            background-color: green;
+            display: inline-block;
+        }
+
+        #yellow {
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            background-color: yellow;
+            display: inline-block;
+
+        }
+
+        #black {
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            background-color: black;
+            display: inline-block;
+        }
+        h2{
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight:100;
+            padding: 0px;
+            margin: 0px;
+        }
+        select {
+            display: flex;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+        }
+        .main{
+            width: 60%;
+            padding: 50px 50px;
+            background-color: aliceblue;
+            border-radius: 25px;
+        }
+        select{
+            margin: 18px 0px;
+            height: 30px;
+            width: 250px;
+        }
+        button{
+            background-color: rgb(15, 170, 15);
+            color: white;
+            border: none;
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h2>Select Your Domain</h2>
+        <select name="" id="se">
+            <option value="">--Make a choice--</option>
+            <option value="react">React</option>
+            <option value="Django" id="dj">Django</option>
+            <option value="aws" id="aw">AWS</option>
+            <option value="sql" id="sq">SQL</option>
+        </select>
+        <div id="red"></div>
+        <div id="yellow"></div>
+        <div id="blue"></div>
+        <div id="green"></div>
+        <div id="black"></div>
+        <p id="paragraph"></p>
+        <button id="up">upper</button>
+        <button id="low">lower</button>
+        <button id="plus">+</button>
+        <button id="minus">-</button>
+    </div>
+    <script>
+        document.getElementById("se").onclick = function () {
+            let option = document.getElementById("se").value;
+            console.log(option)
+
+            if (option == "react") {
+                document.getElementById("paragraph").innerText = "React is a powerful JavaScript library designed for building user interfaces, particularly for single-page applications where UI changes in response to data updates. Developed by Facebook, React has gained widespread adoption due to its efficiency and declarative programming model. At its core, React employs a virtual DOM (Document Object Model) that represents the UI in memory. This abstraction allows React to selectively update only the parts of the actual DOM that need changes, optimizing performance by minimizing costly DOM operations. This approach contrasts with traditional imperative UI updates, where developers manually manipulate the DOM."
+            }
+            if (option == "Django") {
+                document.getElementById("paragraph").innerText = "Djangongo is a high-level Python web framework known for its emphasis on rapid development and clean, pragmatic design. It follows the Model-View-Template (MVT) architecture, similar to Model-View-Controller (MVC), making it straightforward to build web applications by emphasizing reusability and pluggability of components. Djangongo includes built-in features like an ORM (Object-Relational Mapping) for database interactions, a robust admin interface, and automatic admin interface generation. It promotes secure web development practices and supports rapid prototyping. Djangongo's extensive documentation, strong community support, and scalability make it a popular choice for developers seeking to build scalable and maintainable web applications in Python."
+            }
+            if (option == "aws") {
+                document.getElementById("paragraph").innerText = "AWS (Amazon Web Services) is a comprehensive cloud computing platform offered by Amazon. It provides a wide range of services including computing power (EC2), storage solutions (S3), databases (RDS), networking (VPC), and more, all accessible on-demand via a pay-as-you-go model. AWS enables businesses to scale and deploy applications globally with high reliability and security. It offers a rich ecosystem of tools for AI/ML, IoT, serverless computing (Lambda), and container management (ECS/EKS). AWS's global infrastructure spans multiple regions and availability zones, ensuring low-latency access and fault tolerance. Its extensive documentation and support make AWS a top choice for enterprises and startups alike."
+            }
+            if (option == "sql") {
+                document.getElementById("paragraph").innerText = "SQL (Structured Query Language) is a standard language for managing and manipulating relational databases. It allows users to query, insert, update, and delete data, as well as define and manipulate the structure of databases and tables. SQL operates through commands like SELECT, INSERT, UPDATE, DELETE, CREATE, and ALTER, providing powerful capabilities for data retrieval and management. It supports transactions to ensure data integrity, and includes features for filtering, sorting, joining, and aggregating data. SQL is essential for interacting with databases in various applications and plays a fundamental role in data-driven decision-making, reporting, and analytics across industries."
+            }
+        }
+        document.getElementById("red").onclick = function () {
+            document.querySelector("body").style.backgroundColor="red"
+        }
+        document.getElementById("green").onclick = function () {
+            document.querySelector("body").style.backgroundColor="green"
+        }
+        document.getElementById("blue").onclick = function () {
+            document.querySelector("body").style.backgroundColor="blue"
+        }
+        document.getElementById("yellow").onclick = function () {
+            document.querySelector("body").style.backgroundColor="yellow"
+        }
+        document.getElementById("black").onclick = function () {
+            document.querySelector("body").style.backgroundColor="black"
+        }
+        document.getElementById("up").onclick=function(){
+            document.getElementById("paragraph").style.textTransform="uppercase"
+        }
+        document.getElementById("low").onclick=function(){
+            document.getElementById("paragraph").style.textTransform="lowercase"
+        }
+        let count=15
+        document.getElementById("plus").onclick=function(){
+            count++
+            document.getElementById("paragraph").style.fontSize=count+"px"
+        }
+        document.getElementById("minus").onclick=function(){
+            count--
+            document.getElementById("paragraph").style.fontSize=count+"px"
+        }
+    </script>
+</body>
+
+</html>

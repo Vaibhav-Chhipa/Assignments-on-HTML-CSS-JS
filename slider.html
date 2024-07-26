@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment6</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            height: 350px;
+            width: 65%;
+            border: 1px solid black;
+            /* box-sizing: border-box; */
+            overflow: hidden;
+            display: flex;
+        }
+
+        #imageBox {
+            height: 350px;
+            width: 65vw;
+            border: 1px solid black;
+            box-sizing: border-box;
+            display: flex;
+        }
+
+        img {
+            height: 100%;
+            width: 300px;
+            display: inline-block;
+        }
+
+        button {
+            height: 50px;
+            width: 40px;
+            color: white;
+            background-color: black;
+            margin: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="but1" id="left">
+        < </button>
+            <div class="container">
+                <div id="imageBox">
+                    <img src="dog.jpg" alt="">
+                    <img src="dog.jpg" alt="">
+                    <img src="dog.jpg" alt="">
+                    <img src="dog.jpg" alt="">
+                    <img src="dog.jpg" alt="">
+                    <img src="dog.jpg" alt="">
+                    <img src="dog.jpg" alt="">
+                    <img src="dog.jpg" alt="">
+                    <img src="dog.jpg" alt="">
+                    <img src="dog.jpg" alt="">
+                    <img src="dog.jpg" alt="">
+                    <img src="dog.jpg" alt="">
+                    <img src="dog.jpg" alt="">
+                    <img src="dog.jpg" alt="">
+                    <img src="dog.jpg" alt="">
+
+                </div>
+            </div>
+            <button class="but1" id="right"> > </button>
+            <script>
+
+                let plus = 0
+                document.getElementById("right").onclick = function () {
+                    plus = plus + 15
+                    imageBox.style.position = "relative";
+                    imageBox.style.left = +plus + "px"
+                }
+                document.getElementById("left").onclick = function () {
+                    plus = plus - 15
+                    imageBox.style.position = "relative";
+                    imageBox.style.left = +plus + "px"
+                }
+
+            </script>
+</body>
+
+</html>

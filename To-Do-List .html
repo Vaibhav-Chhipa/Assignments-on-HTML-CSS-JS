@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO-LIST</title>
+    <style>
+        input {
+            font-size: 20px;
+        }
+
+        button {
+            font-size: 20px;
+        }
+
+        .button {
+            font-size: 20px;
+        }
+
+        li {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My TO-DO-LIST</h1>
+    <div class="container">
+        <input type="text">
+        <button onclick="addTodo()">ADD</button>
+    </div>
+    <ul id="myUL">
+
+    </ul>
+
+    <script>
+        function addTodo() {
+            let val = document.querySelector("input").value
+            let li = document.createElement("li");
+            li.textContent = val;
+            let completeButton = document.createElement("button");
+            completeButton.textContent = "Complete";
+            completeButton.setAttribute("class", "button");
+            completeButton.onclick = function() {
+                li.classList.toggle("completed");
+            };
+
+            let deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.setAttribute("class", "button");
+            deleteButton.onclick = function() {
+                li.remove();
+            };
+
+            li.appendChild(completeButton);
+            li.appendChild(deleteButton);
+
+            document.getElementById("myUL").appendChild(li);
+            document.getElementById("button").appendChild(button);
+
+            }
+    </script>
+</body>
+
+</html>
